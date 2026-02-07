@@ -5,10 +5,9 @@ export default function CatMascot() {
     <Image
       src="/images/cat-mascot.webp"
       alt="MeowSnap cat mascot"
-      width={0}
-      height={0}
-      sizes="100vw"
-      style={{ width: "300px", height: "auto" }}
+      width={579}
+      height={386}
+      className="w-[300px] h-auto"
     />
   );
 }
