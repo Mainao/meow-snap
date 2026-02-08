@@ -1,8 +1,5 @@
-import { Landing } from "@/features/landing";
+import { LandingPage } from "@/features/landing";
 
 export default function Home() {
-   
-  return (
-    <Landing />
-  );
+  return <LandingPage />
 }
