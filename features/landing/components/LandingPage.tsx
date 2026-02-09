@@ -11,7 +11,10 @@ export function LandingPage() {
   return (
     <div className="flex flex-col items-center justify-center space-y-8 min-h-screen">
       {rejected ? <CatMascotSad /> : <CatMascot />}
-      <LandingActions rejected={rejected} onReject={() => setRejected(true)} onAccept={() => setRejected(false)} />
+      <LandingActions 
+        rejected={rejected} 
+        onReject={() => setRejected(true)} 
+      />
     </div>
   );
 }
