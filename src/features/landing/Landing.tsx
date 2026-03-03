@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { LandingActions } from "./LandingActions";
-import CatStickerSad from "@/components/sticker/CatStickerSad";
 import CatSticker from "@/components/sticker/CatSticker";
 
 interface LandingProps {
@@ -14,7 +13,7 @@ export function Landing({ onNext }: LandingProps) {
 
     return (
         <div className="flex flex-col items-center justify-center space-y-8 min-h-[100dvh]">
-            {rejected ? <CatStickerSad /> : <CatSticker />}
+            {rejected ? <CatSticker variant="sad" /> : <CatSticker />}
 
             <LandingActions
                 rejected={rejected}

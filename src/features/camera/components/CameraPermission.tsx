@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import Button from "@/components/ui/Button";
-import CatStickerCamera from "@/components/sticker/CatStickerCamera";
+import CatSticker from "@/components/sticker/CatSticker";
 
 interface PermissionProps {
     onNext: () => void;
@@ -33,7 +33,7 @@ export function CameraPermission({ onNext }: PermissionProps) {
 
     return (
         <div className="flex flex-col items-center justify-center space-y-6 text-center min-h-[100dvh]">
-            <CatStickerCamera />
+            <CatSticker variant="camera" />
 
             <h1 className="text-4xl md:text-5xl font-bold cute-text">
                 SMILEEEEE
