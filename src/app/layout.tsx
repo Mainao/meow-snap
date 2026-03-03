@@ -29,7 +29,7 @@ export default function RootLayout({
             <body
                 className={`${gaegu.variable} ${notoSansMono.variable} antialiased h-full`}
             >
-                <div className="font-sans text-center text-gray-800 w-screen h-screen flex flex-col items-center justify-center p-4 overflow-hidden">
+                <div className="text-center text-gray-800 w-screen h-screen flex flex-col items-center justify-center p-4 overflow-hidden">
                     {children}
                 </div>
             </body>

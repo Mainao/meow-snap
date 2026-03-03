@@ -30,7 +30,7 @@ export default function CountdownOverlay({
 
   return (
     <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div key={count} className="cute-text text-9xl text-white animate-boop">
+      <div key={count} className="cute-text text-9xl text-white">
         {count}
       </div>
     </div>

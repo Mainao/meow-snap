@@ -4,6 +4,7 @@ export default function CatSticker() {
     return (
         <Image
             src="/images/cat-sticker.webp"
+            priority
             alt="MeowSnap cat mascot"
             width={579}
             height={386}

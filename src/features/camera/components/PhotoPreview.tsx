@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { PolaroidFrame } from "@/components/ui/PolaroidFrame";
 import Button from "@/components/ui/Button";
 
@@ -24,25 +25,20 @@ export function PhotoPreview({ photo, onNext, onRetake }: PhotoPreviewProps) {
 
     return (
         <div className="flex flex-col items-center justify-center space-y-4 min-h-screen p-4">
-            <PolaroidFrame
-                captionSlot={
-                    !isDeveloped && (
-                        <p className="font-handwritten text-2xl text-center animate-pulse">
-                            developing...
-                        </p>
-                    )
-                }
-            >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src={photo}
-                    alt="Captured photo preview"
-                    className={`w-full h-full object-cover transition-all duration-700 ${
-                        isDeveloped
-                            ? "opacity-100 blur-0"
-                            : "opacity-60 blur-sm"
-                    }`}
-                />
+            <PolaroidFrame>
+                <div className="relative w-full h-full">
+                    <Image
+                        src={photo}
+                        alt="Captured photo preview"
+                        fill
+                        unoptimized
+                        className={`object-cover transition-all duration-700 ${
+                            isDeveloped
+                                ? "opacity-100 blur-0"
+                                : "opacity-60 blur-sm"
+                        }`}
+                    />
+                </div>
             </PolaroidFrame>
 
             <div className="flex space-x-4 mt-4">

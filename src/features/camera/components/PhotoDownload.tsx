@@ -1,6 +1,9 @@
+"use client";
+
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { PolaroidFrame } from "@/components/ui/PolaroidFrame";
-import React, { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
 interface PhotoDownloadProps {
     photo: string;
@@ -15,14 +18,14 @@ export function PhotoDownload({
     setCaption,
     onRetake,
 }: PhotoDownloadProps) {
-    const date = new Date().toLocaleDateString("en-US", {
+    const date = useMemo(() => new Date().toLocaleDateString("en-US", {
         year: "2-digit",
         month: "2-digit",
         day: "2-digit",
-    });
+    }), []);
 
     const downloadPolaroid = useCallback(() => {
-        const image = new Image();
+        const image = new window.Image();
         image.crossOrigin = 'anonymous';
         image.src = photo;
         image.onload = () => {
@@ -31,7 +34,6 @@ export function PhotoDownload({
             const frameHeight = 1000;
             const padding = 40;
             const imageWidth = frameWidth - (padding * 2);
-            const imageHeight = imageWidth;
 
             canvas.width = frameWidth;
             canvas.height = frameHeight;
@@ -44,7 +46,7 @@ export function PhotoDownload({
             ctx.lineWidth = 1;
             ctx.strokeRect(0, 0, frameWidth, frameHeight);
 
-            ctx.drawImage(image, padding, padding, imageWidth, imageHeight);
+            ctx.drawImage(image, padding, padding, imageWidth, imageWidth);
 
             ctx.fillStyle = '#212121';
             ctx.font = '50px Gaegu';
@@ -85,12 +87,15 @@ export function PhotoDownload({
                     </div>
                 }
             >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src={photo}
-                    alt="User capture"
-                    className="w-full h-full object-cover"
-                />
+                <div className="relative w-full h-full">
+                    <Image
+                        src={photo}
+                        alt="User capture"
+                        fill
+                        unoptimized
+                        className="object-cover"
+                    />
+                </div>
             </PolaroidFrame>
 
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full items-center justify-center pt-4">
