@@ -32,7 +32,7 @@ export function CameraPermission({ onNext }: PermissionProps) {
     }, [onNext]);
 
     return (
-        <div className="flex flex-col items-center justify-center space-y-6 text-center min-h-screen">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center min-h-[100dvh]">
             <CatStickerCamera />
 
             <h1 className="text-4xl md:text-5xl font-bold cute-text">

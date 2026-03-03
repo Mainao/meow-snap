@@ -24,7 +24,7 @@ export function PhotoPreview({ photo, onNext, onRetake }: PhotoPreviewProps) {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center space-y-4 min-h-screen p-4">
+        <div className="flex flex-col items-center justify-center space-y-4 min-h-[100dvh] p-4">
             <PolaroidFrame>
                 <div className="relative w-full h-full">
                     <Image
