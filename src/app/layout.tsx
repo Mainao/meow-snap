@@ -26,6 +26,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className="h-full">
+            <head>
+                {/* Preload LCP image — component is client-rendered so next/image priority won't preload server-side */}
+                <link rel="preload" href="/images/cat-sticker.webp" as="image" fetchPriority="high" />
+            </head>
             <body
                 className={`${gaegu.variable} ${notoSansMono.variable} antialiased h-full`}
             >
