@@ -1,9 +1,11 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
+import nextConfig from "eslint-config-next";
 
-export default tseslint.config(
+const config = [
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  ...nextConfig,
   {
     ignores: [
       ".next/**",
@@ -16,7 +18,10 @@ export default tseslint.config(
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     rules: {
-      // Add any custom rules here
+      "@typescript-eslint/no-explicit-any": "error",
+      "react-hooks/exhaustive-deps": "warn",
     },
-  }
-);
+  },
+];
+
+export default config;
