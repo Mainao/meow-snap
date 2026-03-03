@@ -58,7 +58,7 @@ export function CameraView({ onPhotoCaptured }: CameraViewProps) {
                 <FlipCameraIcon className="w-6 h-6" />
             </button>
             <Button onClick={handleCapture} disabled={isCountingDown}>
-                Take Photo 📸
+                Take Photo
             </Button>
         </div>
     </div>

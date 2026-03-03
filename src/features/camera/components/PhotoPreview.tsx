@@ -24,7 +24,7 @@ export function PhotoPreview({ photo, onNext, onRetake }: PhotoPreviewProps) {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center space-y-4 min-h-[100dvh] p-4">
+        <div className="flex flex-col items-center space-y-4 w-full max-w-md">
             <PolaroidFrame>
                 <div className="relative w-full h-full">
                     <Image
@@ -43,11 +43,11 @@ export function PhotoPreview({ photo, onNext, onRetake }: PhotoPreviewProps) {
 
             <div className="flex space-x-4 mt-4">
                 <Button disabled={!isDeveloped} onClick={onNext}>
-                    ✅ keep it
+                    keep it
                 </Button>
 
                 <Button onClick={onRetake} variant="secondary">
-                    🔁 retake
+                    retake
                 </Button>
             </div>
         </div>

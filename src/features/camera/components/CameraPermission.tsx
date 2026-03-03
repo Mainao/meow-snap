@@ -32,7 +32,7 @@ export function CameraPermission({ onNext }: PermissionProps) {
     }, [onNext]);
 
     return (
-        <div className="flex flex-col items-center justify-center space-y-6 text-center min-h-[100dvh]">
+        <div className="flex flex-col items-center justify-center space-y-6 text-center min-h-100dvh">
             <CatSticker variant="camera" />
 
             <h1 className="text-4xl md:text-5xl font-bold cute-text">
@@ -43,7 +43,7 @@ export function CameraPermission({ onNext }: PermissionProps) {
                 Click allow so I can take your photo!!
             </p>
 
-            <Button onClick={handleAllowCamera}>Allow Camera 📷</Button>
+            <Button onClick={handleAllowCamera}>Allow Camera</Button>
 
             {error && (
                 <p className="text-red-500 mt-4 cute-text text-xl">{error}</p>
