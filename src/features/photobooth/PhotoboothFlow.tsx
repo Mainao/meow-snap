@@ -48,8 +48,7 @@ export default function PhotoboothFlow() {
                     photo={photo}
                     caption={caption}
                     setCaption={setCaption}
-                    onRetake={() => setStage("camera")}
-                />
+                    onRetake={() => { setCaption(""); setStage("camera"); }}
             )}
         </>
     );
