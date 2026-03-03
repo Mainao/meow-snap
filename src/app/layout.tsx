@@ -6,12 +6,14 @@ const gaegu = Gaegu({
     variable: "--font-heading",
     subsets: ["latin"],
     weight: ["400", "700"],
+    display: "swap",
 });
 
 const notoSansMono = Noto_Sans_Mono({
     variable: "--font-body",
     subsets: ["latin"],
-    weight: ["400", "600"],
+    weight: ["400", "700"],
+    display: "swap",
 });
 
 export const metadata: Metadata = {

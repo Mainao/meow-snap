@@ -12,7 +12,7 @@ export function Landing({ onNext }: LandingProps) {
     const [rejected, setRejected] = useState(false);
 
     return (
-        <div className="flex flex-col items-center justify-center space-y-8 min-h-[100dvh]">
+        <div className="flex flex-col items-center justify-center space-y-8 min-h-dvh">
             {rejected ? <CatSticker variant="sad" /> : <CatSticker />}
 
             <LandingActions
