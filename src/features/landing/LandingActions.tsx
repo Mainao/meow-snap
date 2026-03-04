@@ -18,7 +18,7 @@ const MESSAGES = {
 } as const;
 
 const BUTTON_TEXT = {
-    default: "yes let’s do it 😄",
+    default: "let’s do it 😄",
     rejected: "okay fine… one photo 😭",
 } as const;
 
@@ -38,7 +38,7 @@ export function LandingActions({
 
     return (
         <div className="flex flex-col items-center gap-4 text-center">
-            <div className="cute-text text-3xl md:text-4xl ">{message}</div>
+            <div className="cute-text text-2xl md:text-4xl ">{message}</div>
 
             {!rejected ? (
                 <div className="flex gap-4">
