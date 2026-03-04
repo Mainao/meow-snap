@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { PolaroidFrame } from "@/components/ui/PolaroidFrame";
 import Button from "@/components/ui/Button";
+import { DEVELOP_DELAY_MS } from "@/constants/photobooth";
 
 interface PhotoPreviewProps {
     photo: string;
@@ -18,7 +19,7 @@ export function PhotoPreview({ photo, onNext, onRetake }: PhotoPreviewProps) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsDeveloped(true);
-        }, 1800);
+        }, DEVELOP_DELAY_MS);
 
         return () => clearTimeout(timer);
     }, []);

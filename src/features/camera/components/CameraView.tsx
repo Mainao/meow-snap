@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import CountdownOverlay from './CountdownOverlay';
 
-import FlipCameraIcon from '@/components/icons/FlipCameraIcon';
+import FlipCameraIcon from '@/components/ui/FlipCameraIcon';
 import Button from '@/components/ui/Button';
 import { useCamera } from '../hooks/useCamera';
 import { PolaroidFrame } from '@/components/ui/PolaroidFrame';

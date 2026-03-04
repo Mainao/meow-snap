@@ -2,14 +2,9 @@
 
 import { useState } from "react";
 import { Landing } from "../landing";
-import {
-    CameraView,
-    CameraPermission,
-    PhotoPreview,
-    PhotoDownload,
-} from "../camera";
-
-type Stage = "landing" | "permission" | "camera" | "preview" | "download";
+import { CameraView, CameraPermission } from "../camera";
+import { PhotoPreview, PhotoDownload } from "../photo";
+import type { Stage } from "@/types/photobooth";
 
 export default function PhotoboothFlow() {
     const [stage, setStage] = useState<Stage>("landing");

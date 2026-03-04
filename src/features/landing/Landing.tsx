@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { LandingActions } from "./LandingActions";
-import CatSticker from "@/components/sticker/CatSticker";
+import CatSticker from "@/components/ui/CatSticker";
 
 interface LandingProps {
     onNext: () => void;

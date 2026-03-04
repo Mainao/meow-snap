@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import Button from "@/components/ui/Button";
-import CatSticker from "@/components/sticker/CatSticker";
+import CatSticker from "@/components/ui/CatSticker";
 
 interface PermissionProps {
     onNext: () => void;

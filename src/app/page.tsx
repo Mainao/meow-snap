@@ -1,4 +1,4 @@
-import PhotoboothFlow from "@/features/photobooth/PhotoboothFlow";
+import { PhotoboothFlow } from "@/features/photobooth";
 
 export default function Home() {
     return <PhotoboothFlow />;

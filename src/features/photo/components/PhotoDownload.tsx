@@ -4,6 +4,7 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { PolaroidFrame } from "@/components/ui/PolaroidFrame";
 import { useCallback, useMemo } from "react";
+import { CANVAS_WIDTH, CANVAS_HEIGHT, CANVAS_PADDING } from "@/constants/photobooth";
 
 interface PhotoDownloadProps {
     photo: string;
@@ -30,33 +31,30 @@ export function PhotoDownload({
         image.src = photo;
         image.onload = () => {
             const canvas = document.createElement('canvas');
-            const frameWidth = 800;
-            const frameHeight = 1000;
-            const padding = 40;
-            const imageWidth = frameWidth - (padding * 2);
+            const imageWidth = CANVAS_WIDTH - (CANVAS_PADDING * 2);
 
-            canvas.width = frameWidth;
-            canvas.height = frameHeight;
+            canvas.width = CANVAS_WIDTH;
+            canvas.height = CANVAS_HEIGHT;
             const ctx = canvas.getContext('2d');
             if (!ctx) return;
 
             ctx.fillStyle = '#ffffff';
-            ctx.fillRect(0, 0, frameWidth, frameHeight);
+            ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
             ctx.strokeStyle = '#e0e0e0';
             ctx.lineWidth = 1;
-            ctx.strokeRect(0, 0, frameWidth, frameHeight);
+            ctx.strokeRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-            ctx.drawImage(image, padding, padding, imageWidth, imageWidth);
+            ctx.drawImage(image, CANVAS_PADDING, CANVAS_PADDING, imageWidth, imageWidth);
 
             ctx.fillStyle = '#212121';
             ctx.font = '50px Gaegu';
             ctx.textAlign = 'center';
-            ctx.fillText(caption, frameWidth / 2, frameHeight - 80, imageWidth - 20);
+            ctx.fillText(caption, CANVAS_WIDTH / 2, CANVAS_HEIGHT - 80, imageWidth - 20);
 
             ctx.fillStyle = '#757575';
             ctx.font = '24px Gaegu';
             ctx.textAlign = 'right';
-            ctx.fillText(date, frameWidth - padding, frameHeight - 30);
+            ctx.fillText(date, CANVAS_WIDTH - CANVAS_PADDING, CANVAS_HEIGHT - 30);
 
             const link = document.createElement('a');
             link.download = 'meow-snap.png';
