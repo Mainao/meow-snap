@@ -121,12 +121,3 @@ landing → permission → camera → preview → download
 3. **Camera** — Streams live video inside a polaroid frame. A 3-second countdown precedes capture. The image is mirrored horizontally using Canvas so it matches what the user sees.
 4. **Preview** — Displays the captured photo with a 1.8-second blur-fade "developing" effect before allowing the user to proceed.
 5. **Download** — Lets the user add a caption, then renders the polaroid (800 × 1000 px) to a canvas and triggers a PNG download.
-
----
-
-## Contributing
-
-1. Fork the repository and create a branch from `main`.
-2. Run `npm run type-check` and `npm run lint` before committing — the project enforces strict TypeScript and ESLint rules.
-3. Keep components stateless where possible. Feature-specific logic belongs in the relevant `features/` module, not in `components/ui/`.
-4. Open a pull request with a clear description of what changed and why.
